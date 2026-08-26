@@ -1,0 +1,15 @@
+services:
+  calendar-viewer:
+    image: ghcr.io/okaufmann/calendar-viewer:latest
+    build: .
+    ports:
+      - "127.0.0.1:8787:8787"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      HOST_GATEWAY: host.docker.internal
+    restart: unless-stopped
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
