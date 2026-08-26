@@ -55,7 +55,7 @@ jobs:
           git checkout -B main origin/main
           cp /tmp/CHANGELOG.md CHANGELOG.md
 
-          if git diff --quiet -- CHANGELOG.md; then
+          if [[ -z "$(git status --porcelain -- CHANGELOG.md)" ]]; then
             echo "CHANGELOG.md is already current."
           else
             git add CHANGELOG.md
@@ -75,3 +75,12 @@ jobs:
             --verify-tag \
             --title "$TAG" \
             --notes-file /tmp/RELEASE_NOTES.md
+
+  publish-image:
+    needs: release
+    permissions:
+      contents: read
+      packages: write
+    uses: ./.github/workflows/image.yml
+    with:
+      tag: ${{ github.ref_name }}
