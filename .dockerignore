@@ -1,0 +1,13 @@
+.git
+.github
+.cursor
+.vscode
+node_modules
+dist
+__pycache__
+*.pyc
+*.md
+.DS_Store
+.env
+LICENSE
+pnpm-debug.log

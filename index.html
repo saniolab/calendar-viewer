@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Open and inspect iCalendar files." />
+    <title>Calendar Viewer</title>
+  </head>
+  <body>
+    <header class="bg-slate-950 text-white">
+      <div class="mx-auto flex max-w-360 flex-wrap items-center gap-3 px-4 py-3 sm:px-6">
+        <h1 class="text-lg font-semibold tracking-tight">Calendar Viewer</h1>
+        <div class="ml-auto flex items-center gap-2">
+          <span id="count" class="rounded-full border border-slate-700 px-2.5 py-1 text-xs text-slate-300">No calendar</span>
+          <button id="exportJson" class="header-button" disabled>JSON</button>
+          <button id="exportCsv" class="header-button" disabled>CSV</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mx-auto grid max-w-360 gap-5 p-4 sm:p-6 lg:grid-cols-[320px_minmax(0,1fr)]">
+      <aside class="space-y-4">
+        <section class="panel">
+          <h2 class="panel-title">Source</h2>
+          <div class="p-4">
+            <div class="mb-3 grid grid-cols-3 gap-1" role="tablist">
+              <button class="source-tab" role="tab" aria-selected="true" data-source-tab="file">File</button>
+              <button class="source-tab" role="tab" aria-selected="false" data-source-tab="url">URL</button>
+              <button class="source-tab" role="tab" aria-selected="false" data-source-tab="paste">Paste</button>
+            </div>
+
+            <div data-source-pane="file">
+              <button id="dropZone" class="w-full rounded-lg border border-dashed border-slate-300 bg-slate-50 px-4 py-8 text-center hover:border-indigo-500">
+                <strong class="block text-sm">Drop .ics here</strong>
+                <span class="text-xs text-slate-500">or click</span>
+              </button>
+              <input id="fileInput" type="file" accept=".ics,.ical,.ifb,text/calendar" hidden />
+            </div>
+
+            <div data-source-pane="url" hidden>
+              <label class="sr-only" for="urlInput">Calendar URL</label>
+              <input id="urlInput" class="input" type="url" placeholder="https://example.com/calendar.ics" />
+              <button id="loadUrl" class="button mt-2">Load</button>
+            </div>
+
+            <div data-source-pane="paste" hidden>
+              <label class="sr-only" for="pasteInput">ICS text</label>
+              <textarea id="pasteInput" class="input min-h-36 resize-y" placeholder="BEGIN:VCALENDAR"></textarea>
+              <button id="loadPaste" class="button mt-2">Load</button>
+            </div>
+            <div id="message" aria-live="polite"></div>
+          </div>
+        </section>
+
+        <section id="sourcesPanel" class="panel" hidden>
+          <h2 class="panel-title">Sources</h2>
+          <div id="sources" class="divide-y divide-slate-100 p-4"></div>
+        </section>
+
+        <section id="filtersPanel" class="panel" hidden>
+          <h2 class="panel-title">Filters</h2>
+          <div class="space-y-4 p-4">
+            <div>
+              <label class="label" for="search">Search</label>
+              <input id="search" class="input" type="search" placeholder="Title, location, UID" />
+            </div>
+            <div>
+              <span class="label">Type</span>
+              <div id="typeFilters" class="flex flex-wrap gap-1.5"></div>
+            </div>
+            <div>
+              <span class="label">When</span>
+              <div id="timeFilters" class="flex flex-wrap gap-1.5">
+                <button class="chip" aria-pressed="true" data-time="all">All</button>
+                <button class="chip" aria-pressed="false" data-time="upcoming">Upcoming</button>
+                <button class="chip" aria-pressed="false" data-time="past">Past</button>
+                <button class="chip" aria-pressed="false" data-time="30">30 days</button>
+              </div>
+            </div>
+            <button id="resetFilters" class="secondary-button w-full">Reset</button>
+          </div>
+        </section>
+      </aside>
+
+      <main class="min-w-0">
+        <div id="mainToolbar" class="mb-4 flex flex-wrap items-center gap-2" hidden>
+          <div class="inline-flex rounded-lg border border-slate-200 bg-white p-1">
+            <button class="view-button" aria-pressed="true" data-view="list">List</button>
+            <button class="view-button" aria-pressed="false" data-view="calendar">Calendar</button>
+          </div>
+          <div id="listControls" class="ml-auto flex items-center gap-2">
+            <select id="sort" class="select">
+              <option value="start-asc">Start ↑</option>
+              <option value="start-desc">Start ↓</option>
+              <option value="summary">Title A–Z</option>
+              <option value="file">File order</option>
+            </select>
+            <select id="timezone" class="select">
+              <option value="local">Local time</option>
+              <option value="original">Original</option>
+            </select>
+          </div>
+        </div>
+
+        <section id="calendarView" class="panel p-3 sm:p-4" hidden>
+          <div id="calendarEmpty" class="py-16 text-center text-slate-400">No calendar loaded.</div>
+          <div id="calendar"></div>
+        </section>
+
+        <section id="listView">
+          <div id="stats" class="mb-4 grid grid-cols-[repeat(auto-fit,minmax(130px,1fr))] overflow-hidden rounded-xl border border-slate-200 bg-slate-200 gap-px"></div>
+          <div id="spectrum" class="panel mb-4 p-3" hidden>
+            <div class="mb-2 flex items-center justify-between text-[10px] uppercase tracking-wider text-slate-500">
+              <span>Timeline</span>
+              <button id="resetSpectrum" class="normal-case tracking-normal text-indigo-600" hidden>Clear</button>
+            </div>
+            <div id="spectrumBars" class="flex h-14 items-end gap-px"></div>
+            <div class="mt-1.5 flex justify-between text-[10px] text-slate-500">
+              <span id="spectrumStart"></span>
+              <span id="spectrumEnd"></span>
+            </div>
+          </div>
+          <div id="listHeading" class="mb-2 flex items-center gap-3">
+            <h2 id="listTitle" class="text-sm font-semibold">Events</h2>
+          </div>
+          <div id="eventList"></div>
+        </section>
+      </main>
+    </div>
+
+    <dialog id="eventDialog" class="m-auto max-h-[88vh] w-[min(860px,calc(100%-2rem))] rounded-xl bg-white p-0 shadow-2xl backdrop:bg-slate-950/50">
+      <div class="flex items-center border-b border-slate-200 px-4 py-3">
+        <h2 id="dialogTitle" class="min-w-0 flex-1 truncate text-base font-semibold">Event</h2>
+        <button id="closeDialog" class="secondary-button">Close</button>
+      </div>
+      <div id="dialogBody" class="max-h-[calc(88vh-58px)] overflow-auto p-4"></div>
+    </dialog>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

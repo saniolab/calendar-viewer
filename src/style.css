@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+@theme {
+  --color-signal: #4f46e5;
+  --color-signal-soft: #eef2ff;
+}
+
+@layer base {
+  body {
+    @apply m-0 bg-slate-100 font-sans text-[13px] leading-normal text-slate-900 antialiased;
+  }
+
+  button, input, select, textarea {
+    font: inherit;
+    color: inherit;
+  }
+
+  button {
+    @apply cursor-pointer disabled:cursor-not-allowed disabled:opacity-50;
+  }
+}
+
+@layer components {
+  .panel { @apply rounded-xl border border-slate-200 bg-white; }
+  .panel-title { @apply border-b border-slate-200 px-4 py-2.5 text-[11px] font-medium uppercase tracking-wider text-slate-500; }
+  .input { @apply w-full rounded-md border border-slate-200 bg-slate-50 px-2.5 py-2 text-xs outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100; }
+  .label { @apply mb-1.5 block text-[10px] font-medium uppercase tracking-wider text-slate-500; }
+  .button { @apply inline-flex items-center justify-center rounded-md border border-indigo-600 bg-indigo-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-indigo-700; }
+  .secondary-button { @apply inline-flex items-center justify-center rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium hover:bg-slate-50; }
+  .header-button { @apply rounded-md border border-slate-700 px-2.5 py-1 text-xs hover:bg-slate-800; }
+  .source-tab { @apply rounded-md border border-slate-200 bg-slate-50 px-2 py-1.5 text-xs aria-selected:border-indigo-600 aria-selected:bg-indigo-600 aria-selected:text-white; }
+  .chip { @apply rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-[11px] aria-pressed:border-indigo-300 aria-pressed:bg-indigo-50 aria-pressed:font-medium aria-pressed:text-indigo-900; }
+  .view-button { @apply rounded-md px-3 py-1.5 text-xs aria-pressed:bg-slate-900 aria-pressed:text-white; }
+  .select { @apply rounded-md border border-slate-200 bg-white px-2 py-1.5 text-xs; }
+  .empty-state { @apply rounded-lg border border-dashed border-slate-200 px-6 py-16 text-center text-slate-500; }
+  .badge { @apply rounded-full border border-slate-200 bg-slate-50 px-1.5 py-0.5 text-[10px] text-slate-600; }
+}
+
+.html-description {
+  overflow-wrap: anywhere;
+}
+.html-description p { margin: .4rem 0; }
+.html-description a { color: #4f46e5; text-decoration: underline; }
+.html-description ul { list-style: disc; padding-left: 1.25rem; }
+.html-description ol { list-style: decimal; padding-left: 1.25rem; }
+.html-description img { max-width: 100%; height: auto; }
+.html-description table { width: 100%; font-size: 12px; }
+.html-description td { padding-right: .5rem; vertical-align: top; }
+
+.fc {
+  --fc-border-color: #e2e8f0;
+  --fc-button-bg-color: #0f172a;
+  --fc-button-border-color: #0f172a;
+  --fc-button-hover-bg-color: #1e293b;
+  --fc-button-hover-border-color: #1e293b;
+  --fc-button-active-bg-color: #4f46e5;
+  --fc-button-active-border-color: #4f46e5;
+  --fc-event-bg-color: #4f46e5;
+  --fc-event-border-color: #4f46e5;
+  --fc-today-bg-color: #eef2ff;
+  font-size: 12px;
+}
+.fc .fc-toolbar-title { font-size: 1rem; font-weight: 600; }
+.fc .fc-button { font-size: 11px; padding: .4rem .6rem; text-transform: capitalize; }
+.fc .fc-daygrid-week-number,
+.fc .fc-timegrid-axis-cushion {
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 600;
+}
+.fc a.fc-daygrid-week-number:hover,
+.fc a.fc-daygrid-day-number:hover {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .fc .fc-toolbar { align-items: flex-start; gap: .5rem; }
+  .fc .fc-toolbar-chunk:nth-child(2) { order: -1; width: 100%; }
+}
