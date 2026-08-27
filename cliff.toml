@@ -18,7 +18,7 @@ body = """
 
 ### {{ group | striptags | trim }}
 {% for commit in commits %}
-- {% if commit.scope %}**{{ commit.scope }}:** {% endif %}{{ commit.message | upper_first }} ([`{{ commit.id | truncate(length=7, end="") }}`](https://github.com/okaufmann/calendar-viewer/commit/{{ commit.id }}))
+- {% if commit.scope %}**{{ commit.scope }}:** {% endif %}{{ commit.message | upper_first }} ([`{{ commit.id | truncate(length=7, end="") }}`](https://github.com/saniolab/calendar-viewer/commit/{{ commit.id }}))
 {% endfor %}\
 {% endfor %}
 """
@@ -26,9 +26,9 @@ footer = """
 {% for release in releases %}
 {% if release.version -%}
 {% if release.previous.version -%}
-[{{ release.version | trim_start_matches(pat="v") }}]: https://github.com/okaufmann/calendar-viewer/compare/{{ release.previous.version }}...{{ release.version }}
+[{{ release.version | trim_start_matches(pat="v") }}]: https://github.com/saniolab/calendar-viewer/compare/{{ release.previous.version }}...{{ release.version }}
 {% else -%}
-[{{ release.version | trim_start_matches(pat="v") }}]: https://github.com/okaufmann/calendar-viewer/releases/tag/{{ release.version }}
+[{{ release.version | trim_start_matches(pat="v") }}]: https://github.com/saniolab/calendar-viewer/releases/tag/{{ release.version }}
 {% endif -%}
 {% endif -%}
 {% endfor %}
