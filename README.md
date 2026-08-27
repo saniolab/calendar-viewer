@@ -24,7 +24,7 @@ docker compose up
 ```
 
 Open <http://localhost:8787>. Compose pulls the public
-`ghcr.io/okaufmann/calendar-viewer:latest` image.
+`ghcr.io/saniolab/calendar-viewer:latest` image.
 
 After publishing the first release, the repository owner must make the GHCR
 package public once in its package settings. GitHub does not provide an API to
@@ -43,7 +43,7 @@ docker compose up --build
 Or run the published image without Compose:
 
 ```sh
-docker run --rm -p 127.0.0.1:8787:8787 ghcr.io/okaufmann/calendar-viewer:latest
+docker run --rm -p 127.0.0.1:8787:8787 ghcr.io/saniolab/calendar-viewer:latest
 ```
 
 The container can access services running on the Docker host through
@@ -105,8 +105,8 @@ git push origin v1.0.0
 ```
 
 CI generates `CHANGELOG.md`, creates the matching GitHub Release, and publishes
-both `ghcr.io/okaufmann/calendar-viewer:v1.0.0` and
-`ghcr.io/okaufmann/calendar-viewer:latest`.
+both `ghcr.io/saniolab/calendar-viewer:v1.0.0` and
+`ghcr.io/saniolab/calendar-viewer:latest`.
 
 ## License
 
