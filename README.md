@@ -4,6 +4,17 @@ Open iCalendar (`.ics`) files, URLs, or pasted calendar data in calendar and
 list views. Calendar data is parsed in the browser and is not stored or
 imported.
 
+### List view
+
+![Calendar Viewer showing example events in the list view](docs/calendar-list-view.png)
+
+### Calendar view
+
+![Calendar Viewer showing example events in the month view](docs/calendar-month-view.png)
+
+Try the interface with the included
+[example calendar](examples/example-calendar.ics).
+
 ## Run with Docker
 
 Prerequisites: Docker with Docker Compose.
