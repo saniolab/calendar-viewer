@@ -1,0 +1,106 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Calendar Viewer//Example Calendar//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Calendar Viewer Demo
+X-WR-TIMEZONE:Europe/Zurich
+BEGIN:VEVENT
+UID:kickoff@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260907T090000
+DTEND;TZID=Europe/Zurich:20260907T103000
+SUMMARY:Project kickoff
+LOCATION:Meeting room Atlas
+DESCRIPTION:Meet the team\, align on goals\, and agree on the first milestone.
+CATEGORIES:Work,Planning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:design-review@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260909T133000
+DTEND;TZID=Europe/Zurich:20260909T150000
+SUMMARY:Design review
+LOCATION:Studio 2
+DESCRIPTION:Review the latest interface concepts and accessibility notes.
+CATEGORIES:Work,Design
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:team-lunch@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260910T120000
+DTEND;TZID=Europe/Zurich:20260910T133000
+SUMMARY:Team lunch
+LOCATION:Riverside Café
+DESCRIPTION:A relaxed lunch with the whole project team.
+CATEGORIES:Team,Social
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:release-planning@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260914T100000
+DTEND;TZID=Europe/Zurich:20260914T113000
+SUMMARY:Release planning
+LOCATION:Online
+DESCRIPTION:Define the release scope\, owners\, and launch checklist.
+CATEGORIES:Work,Planning
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:customer-demo@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260916T140000
+DTEND;TZID=Europe/Zurich:20260916T150000
+SUMMARY:Customer demo
+LOCATION:Video call
+DESCRIPTION:Walk through the new calendar experience and collect feedback.
+CATEGORIES:Work,Customer
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:deep-work@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260918T083000
+DTEND;TZID=Europe/Zurich:20260918T120000
+SUMMARY:Focus time
+DESCRIPTION:Protected time for implementation and documentation.
+CATEGORIES:Work,Focus
+STATUS:TENTATIVE
+END:VEVENT
+BEGIN:VEVENT
+UID:product-conference@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;VALUE=DATE:20260921
+DTEND;VALUE=DATE:20260924
+SUMMARY:Product conference
+LOCATION:Zurich Convention Center
+DESCRIPTION:Three days of talks\, workshops\, and community sessions.
+CATEGORIES:Conference
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:retrospective@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260925T150000
+DTEND;TZID=Europe/Zurich:20260925T160000
+SUMMARY:Sprint retrospective
+LOCATION:Meeting room Birch
+DESCRIPTION:Discuss what worked\, what did not\, and the next improvements.
+CATEGORIES:Work,Team
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:bike-ride@example.calendar
+DTSTAMP:20260827T080000Z
+DTSTART;TZID=Europe/Zurich:20260927T100000
+DTEND;TZID=Europe/Zurich:20260927T123000
+SUMMARY:Sunday bike ride
+LOCATION:Lake promenade
+DESCRIPTION:An easy ride around the lake with a coffee stop.
+CATEGORIES:Personal,Sport
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR
