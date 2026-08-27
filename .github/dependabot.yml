@@ -11,9 +11,10 @@ updates:
     open-pull-requests-limit: 5
     versioning-strategy: increase-if-necessary
     groups:
-      fullcalendar:
+      calendar:
         patterns:
-          - "@fullcalendar/*"
+          - fullcalendar
+          - temporal-polyfill
       development-dependencies:
         dependency-type: development
         update-types:
