@@ -68,7 +68,7 @@ If `PORT` changes, update the container side of the published port as well.
 
 ## Develop without Docker
 
-Prerequisites: Node.js 22, pnpm 11, and Python 3.12.
+Prerequisites: Node.js 24, pnpm 11, and Python 3.12.
 
 Install dependencies and start the backend:
 
