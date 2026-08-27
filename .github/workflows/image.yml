@@ -23,7 +23,7 @@ concurrency:
   cancel-in-progress: false
 
 env:
-  IMAGE: ghcr.io/okaufmann/calendar-viewer
+  IMAGE: ghcr.io/${{ github.repository }}
 
 jobs:
   image:
@@ -84,7 +84,13 @@ jobs:
           done
 
           if [[ "$public" != true ]]; then
-            settings_url="https://github.com/users/okaufmann/packages/container/calendar-viewer/settings"
+            owner="${GITHUB_REPOSITORY%%/*}"
+            name="${GITHUB_REPOSITORY#*/}"
+            if [[ "${{ github.event.repository.owner.type }}" == "Organization" ]]; then
+              settings_url="https://github.com/orgs/${owner}/packages/container/${name}/settings"
+            else
+              settings_url="https://github.com/users/${owner}/packages/container/${name}/settings"
+            fi
             echo "::error::The image was published but is not public. Change its visibility once at ${settings_url}, then rerun this workflow."
             {
               echo "## Package visibility"
