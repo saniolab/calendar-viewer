@@ -47,34 +47,14 @@
 .html-description table { width: 100%; font-size: 12px; }
 .html-description td { padding-right: .5rem; vertical-align: top; }
 
-.fc {
-  --fc-border-color: #e2e8f0;
-  --fc-button-bg-color: #0f172a;
-  --fc-button-border-color: #0f172a;
-  --fc-button-hover-bg-color: #1e293b;
-  --fc-button-hover-border-color: #1e293b;
-  --fc-button-active-bg-color: #4f46e5;
-  --fc-button-active-border-color: #4f46e5;
-  --fc-event-bg-color: #4f46e5;
-  --fc-event-border-color: #4f46e5;
-  --fc-today-bg-color: #eef2ff;
+#calendar {
+  --fc-classic-border: #e2e8f0;
+  --fc-classic-button: #0f172a;
+  --fc-classic-button-border: #0f172a;
+  --fc-classic-button-strong: #1e293b;
+  --fc-classic-button-strong-border: #1e293b;
+  --fc-classic-primary: #4f46e5;
+  --fc-classic-event: #4f46e5;
+  --fc-classic-today: #eef2ff;
   font-size: 12px;
-}
-.fc .fc-toolbar-title { font-size: 1rem; font-weight: 600; }
-.fc .fc-button { font-size: 11px; padding: .4rem .6rem; text-transform: capitalize; }
-.fc .fc-daygrid-week-number,
-.fc .fc-timegrid-axis-cushion {
-  color: #64748b;
-  font-size: 10px;
-  font-weight: 600;
-}
-.fc a.fc-daygrid-week-number:hover,
-.fc a.fc-daygrid-day-number:hover {
-  color: #4f46e5;
-  text-decoration: underline;
-}
-
-@media (max-width: 640px) {
-  .fc .fc-toolbar { align-items: flex-start; gap: .5rem; }
-  .fc .fc-toolbar-chunk:nth-child(2) { order: -1; width: 100%; }
 }

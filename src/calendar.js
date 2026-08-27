@@ -1,8 +1,12 @@
-import { Calendar } from "@fullcalendar/core";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import timeGridPlugin from "@fullcalendar/timegrid";
-import listPlugin from "@fullcalendar/list";
-import interactionPlugin from "@fullcalendar/interaction";
+import { Calendar } from "fullcalendar";
+import dayGridPlugin from "fullcalendar/daygrid";
+import timeGridPlugin from "fullcalendar/timegrid";
+import listPlugin from "fullcalendar/list";
+import interactionPlugin from "fullcalendar/interaction";
+import classicThemePlugin from "fullcalendar/themes/classic";
+import "fullcalendar/skeleton.css";
+import "fullcalendar/themes/classic/theme.css";
+import "fullcalendar/themes/classic/palette.css";
 
 function exclusiveAllDayEnd(record) {
   if (record.end?.ms != null) return new Date(record.end.ms);
@@ -45,7 +49,13 @@ export function formatCalDate(value) {
 
 export function createCalendar(element, { onEventClick, onDatesSet, onNavLink } = {}) {
   const calendar = new Calendar(element, {
-    plugins: [dayGridPlugin, timeGridPlugin, listPlugin, interactionPlugin],
+    plugins: [
+      classicThemePlugin,
+      dayGridPlugin,
+      timeGridPlugin,
+      listPlugin,
+      interactionPlugin,
+    ],
     initialView: "dayGridMonth",
     height: "auto",
     firstDay: 1,
