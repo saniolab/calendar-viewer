@@ -1,6 +1,6 @@
 services:
   calendar-viewer:
-    image: ghcr.io/okaufmann/calendar-viewer:latest
+    image: ghcr.io/saniolab/calendar-viewer:latest
     build: .
     ports:
       - "127.0.0.1:8787:8787"
