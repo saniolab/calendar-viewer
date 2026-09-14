@@ -10,7 +10,7 @@ importers:
     dependencies:
       fullcalendar:
         specifier: ^7.0.2
-        version: 7.0.2(temporal-polyfill@1.0.4)
+        version: 7.1.0(temporal-polyfill@1.0.4)
       temporal-polyfill:
         specifier: ^1.0.4
         version: 1.0.4
@@ -27,15 +27,15 @@ importers:
 
 packages:
 
-  '@full-ui/headless-calendar@7.0.2':
-    resolution: {integrity: sha512-i6UlTNjBVuiBca5Sq6OoLxFqK6eaQ/v1XOLObjRkzXLuSuNn+qs9/dUvlzrbeesn7QbRH7+u7lyvlQyq8WvmGA==}
+  '@full-ui/headless-calendar@7.1.0':
+    resolution: {integrity: sha512-T54tSUik/ia9Jj4xduFHv1p98eVBgLnE33Q6qhpg+WWkqKCLBCbtVyMcTPPIOP5jjTV2MbtjrRvRt1RLSryGHA==}
     peerDependencies:
       temporal-polyfill: ^1.0.1
 
-  '@fullcalendar/core@7.0.2':
-    resolution: {integrity: sha512-EkhE1wkPttp5kKNmUNLsMwl8nUuQmLdj30SPKagOEWMJUE4AHETAu/F/SbYoRq+nksm2GWPe9cQs1kbQP2H9pA==}
+  '@fullcalendar/core@7.1.0':
+    resolution: {integrity: sha512-a+ABP7zQpPWpwPT8EsOdShpeOVrJyx/XYStqERd8ibld/FLi/dzpd95r7w3RIdFqFm9iUv0gdGvBshSlI/dbPw==}
     peerDependencies:
-      '@full-ui/headless-calendar': 7.0.2
+      '@full-ui/headless-calendar': 7.1.0
       temporal-polyfill: ^1.0.1
 
   '@jridgewell/gen-mapping@0.3.13':
@@ -272,8 +272,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  fullcalendar@7.0.2:
-    resolution: {integrity: sha512-xqt/4CrnabOUVfu5PExyc6plbwH8QA1jAusRw6JOUfS+BmpA19W74lNLDty6EO0H+2cm/qVMza4TgQiJLHPAqQ==}
+  fullcalendar@7.1.0:
+    resolution: {integrity: sha512-Pvr/fLrwuwfIjRygNKHJdHFJ8QGWjkAf6FFaMAi7Iv/fFftZQXV49smJE8KTgSVW/GxrqjN5t5Zw2OBTRKcnzA==}
     peerDependencies:
       temporal-polyfill: ^1.0.1
 
@@ -533,13 +533,13 @@ packages:
 
 snapshots:
 
-  '@full-ui/headless-calendar@7.0.2(temporal-polyfill@1.0.4)':
+  '@full-ui/headless-calendar@7.1.0(temporal-polyfill@1.0.4)':
     dependencies:
       temporal-polyfill: 1.0.4
 
-  '@fullcalendar/core@7.0.2(@full-ui/headless-calendar@7.0.2(temporal-polyfill@1.0.4))(temporal-polyfill@1.0.4)':
+  '@fullcalendar/core@7.1.0(@full-ui/headless-calendar@7.1.0(temporal-polyfill@1.0.4))(temporal-polyfill@1.0.4)':
     dependencies:
-      '@full-ui/headless-calendar': 7.0.2(temporal-polyfill@1.0.4)
+      '@full-ui/headless-calendar': 7.1.0(temporal-polyfill@1.0.4)
       temporal-polyfill: 1.0.4
 
   '@jridgewell/gen-mapping@0.3.13':
@@ -692,10 +692,10 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fullcalendar@7.0.2(temporal-polyfill@1.0.4):
+  fullcalendar@7.1.0(temporal-polyfill@1.0.4):
     dependencies:
-      '@full-ui/headless-calendar': 7.0.2(temporal-polyfill@1.0.4)
-      '@fullcalendar/core': 7.0.2(@full-ui/headless-calendar@7.0.2(temporal-polyfill@1.0.4))(temporal-polyfill@1.0.4)
+      '@full-ui/headless-calendar': 7.1.0(temporal-polyfill@1.0.4)
+      '@fullcalendar/core': 7.1.0(@full-ui/headless-calendar@7.1.0(temporal-polyfill@1.0.4))(temporal-polyfill@1.0.4)
       preact: 10.29.8
       temporal-polyfill: 1.0.4
     transitivePeerDependencies:
