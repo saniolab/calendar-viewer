@@ -10,10 +10,10 @@ importers:
     dependencies:
       fullcalendar:
         specifier: ^7.0.2
-        version: 7.1.1(temporal-polyfill@1.0.5)
+        version: 7.1.3(temporal-polyfill@1.0.6)
       temporal-polyfill:
         specifier: ^1.0.4
-        version: 1.0.5
+        version: 1.0.6
     devDependencies:
       '@tailwindcss/vite':
         specifier: ^4.3.3
@@ -27,15 +27,15 @@ importers:
 
 packages:
 
-  '@full-ui/headless-calendar@7.1.1':
-    resolution: {integrity: sha512-WaZw5t4K+JlLDw/1ucnjnOznXJJ/86bZWgeNIh8Xac62/+nn0VMO4HqCFKk9ylFnrng4zLy4iAjkFuH6jjS3Ow==}
+  '@full-ui/headless-calendar@7.1.3':
+    resolution: {integrity: sha512-CFomIp87osqY65Hlu2c0e2ZnofBe9tKOO8IoPzIfSPVDK/+aGz4Itj6mLu4xPjIvzRDQiopcVzYlip6u1bvYxw==}
     peerDependencies:
       temporal-polyfill: ^1.0.1
 
-  '@fullcalendar/core@7.1.1':
-    resolution: {integrity: sha512-QYTmaq52uxvGLk9EX60p+4zYIE+baGDdbYEITW4iovevohlpl1Jg7u3X2hfW1//yk0cs7d1Kd3yOBcaMnObITg==}
+  '@fullcalendar/core@7.1.3':
+    resolution: {integrity: sha512-DLGXqX7CnuUQHH679FgE6+jc927wa708ydIcnfVx372IOK/OiDZjqc+IBwuKnu2EyqleCooDoAnUAcvXBhHosA==}
     peerDependencies:
-      '@full-ui/headless-calendar': 7.1.1
+      '@full-ui/headless-calendar': 7.1.3
       temporal-polyfill: ^1.0.1
 
   '@jridgewell/gen-mapping@0.3.13':
@@ -272,8 +272,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  fullcalendar@7.1.1:
-    resolution: {integrity: sha512-W+0ji7pvvb4miUMLHXnx86GgA3uRVqGfxJRg1Ibph9w9jbMVyydDv26XuoH7LjS7Q6MRTkzNEw2UxO/3Q3L/+w==}
+  fullcalendar@7.1.3:
+    resolution: {integrity: sha512-Mn8VNqLX80C93UFh0s9aKqhHUSh0BwK8pczyQ+nNDKutJeM0/SVLkJoizTfX9sdmwGiS6+hkAHAg9YC10Us0gg==}
     peerDependencies:
       temporal-polyfill: ^1.0.1
 
@@ -479,8 +479,8 @@ packages:
     resolution: {integrity: sha512-uxc/zpqFg6x7C8vOE7lh6Lbda8eEL9zmVm/PLeTPBRhh1xCgdWaQ+J1CUieGpIfm2HdtsUpRv+HshiasBMcc6A==}
     engines: {node: '>=6'}
 
-  temporal-polyfill@1.0.5:
-    resolution: {integrity: sha512-+H/mmY74i6wXCMcjIhGuSnODcyZnc4eois2myhOyX0UqRAKNXQY5m9iB1en5jQ/n4SXtjLXo1ElBI5bmn8tZwQ==}
+  temporal-polyfill@1.0.6:
+    resolution: {integrity: sha512-tYyEry1HLGUDbm2356W3iYD0OZdo7rlP7h98Zr/EnjqLZQwTAfcBDUvJnJbfA15v/vQad57hJZScG5O0W2oKEA==}
 
   temporal-spec@1.0.1:
     resolution: {integrity: sha512-wxVoanmDeavXie1vu2JaQ3WIc3JZnWAOYFBsJyATaVsXsycKYUflGsyBmrRSnoCpZJpwPyr38VpgSUlQ8CbFxg==}
@@ -537,14 +537,14 @@ packages:
 
 snapshots:
 
-  '@full-ui/headless-calendar@7.1.1(temporal-polyfill@1.0.5)':
+  '@full-ui/headless-calendar@7.1.3(temporal-polyfill@1.0.6)':
     dependencies:
-      temporal-polyfill: 1.0.5
+      temporal-polyfill: 1.0.6
 
-  '@fullcalendar/core@7.1.1(@full-ui/headless-calendar@7.1.1(temporal-polyfill@1.0.5))(temporal-polyfill@1.0.5)':
+  '@fullcalendar/core@7.1.3(@full-ui/headless-calendar@7.1.3(temporal-polyfill@1.0.6))(temporal-polyfill@1.0.6)':
     dependencies:
-      '@full-ui/headless-calendar': 7.1.1(temporal-polyfill@1.0.5)
-      temporal-polyfill: 1.0.5
+      '@full-ui/headless-calendar': 7.1.3(temporal-polyfill@1.0.6)
+      temporal-polyfill: 1.0.6
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
@@ -696,12 +696,12 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  fullcalendar@7.1.1(temporal-polyfill@1.0.5):
+  fullcalendar@7.1.3(temporal-polyfill@1.0.6):
     dependencies:
-      '@full-ui/headless-calendar': 7.1.1(temporal-polyfill@1.0.5)
-      '@fullcalendar/core': 7.1.1(@full-ui/headless-calendar@7.1.1(temporal-polyfill@1.0.5))(temporal-polyfill@1.0.5)
+      '@full-ui/headless-calendar': 7.1.3(temporal-polyfill@1.0.6)
+      '@fullcalendar/core': 7.1.3(@full-ui/headless-calendar@7.1.3(temporal-polyfill@1.0.6))(temporal-polyfill@1.0.6)
       preact: 10.29.8
-      temporal-polyfill: 1.0.5
+      temporal-polyfill: 1.0.6
     transitivePeerDependencies:
       - preact-render-to-string
 
@@ -854,7 +854,7 @@ snapshots:
 
   tapable@2.3.3: {}
 
-  temporal-polyfill@1.0.5:
+  temporal-polyfill@1.0.6:
     dependencies:
       temporal-spec: 1.0.1
       temporal-utils: 1.0.3
